@@ -393,7 +393,7 @@
     <div class="container">
         <!-- Background with Video -->
         <div class="background">
-            <video class="background-video" autoplay muted loop playsinline>
+            <video id="bg-video" class="background-video" autoplay muted loop playsinline preload="auto">
                 <source src="https://muqla-test.sfo3.cdn.digitaloceanspaces.com/13085426_3840_2160_60fps.mp4" type="video/mp4">
             </video>
             <div class="background-overlay"></div>
@@ -427,5 +427,74 @@
             </h1>
         </main>
     </div>
+
+    <script>
+        // Ensure video plays on mobile devices
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('bg-video');
+            
+            if (video) {
+                // Function to play video
+                function playVideo() {
+                    const playPromise = video.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise
+                            .then(() => {
+                                console.log('Video playback started successfully');
+                            })
+                            .catch(error => {
+                                console.log('Autoplay prevented, attempting to play on user interaction:', error);
+                                
+                                // Try to play on any user interaction
+                                const playOnInteraction = () => {
+                                    video.play().then(() => {
+                                        console.log('Video started after user interaction');
+                                        // Remove listeners after successful play
+                                        document.removeEventListener('touchstart', playOnInteraction);
+                                        document.removeEventListener('click', playOnInteraction);
+                                        document.removeEventListener('scroll', playOnInteraction);
+                                    }).catch(err => {
+                                        console.log('Still unable to play video:', err);
+                                    });
+                                };
+                                
+                                document.addEventListener('touchstart', playOnInteraction, { once: true });
+                                document.addEventListener('click', playOnInteraction, { once: true });
+                                document.addEventListener('scroll', playOnInteraction, { once: true });
+                            });
+                    }
+                }
+                
+                // Set video properties explicitly for mobile
+                video.muted = true;
+                video.playsInline = true;
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+                
+                // Try to play immediately
+                playVideo();
+                
+                // Also try to play when the video is loaded
+                video.addEventListener('loadeddata', function() {
+                    playVideo();
+                });
+                
+                // Handle visibility change (when user returns to tab)
+                document.addEventListener('visibilitychange', function() {
+                    if (!document.hidden && video.paused) {
+                        playVideo();
+                    }
+                });
+                
+                // iOS-specific: try to play when page becomes visible
+                window.addEventListener('pageshow', function() {
+                    if (video.paused) {
+                        playVideo();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
