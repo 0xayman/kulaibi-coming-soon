@@ -413,7 +413,7 @@
         <!-- Hero Section -->
         <main class="hero">
             <!-- Hourglass Icon -->
-            <img src="assets/hourglass.svg" alt="Hourglass" class="hourglass-icon">
+            <img src="assets/hourglass.gif" alt="Hourglass" class="hourglass-icon">
             
             <div class="status-banner">
                 <div class="status-soon">
