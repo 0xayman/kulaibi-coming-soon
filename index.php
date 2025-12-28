@@ -206,41 +206,185 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .header {
-                padding: 15px 20px;
+                padding: 16px 24px;
             }
 
             .logo img {
                 height: 32px;
             }
 
+            .language-switcher {
+                font-size: 13px;
+            }
+
+            .language-switcher img {
+                width: 18px;
+                height: 18px;
+            }
+
             .hero {
-                padding: 40px 15px;
-                gap: 30px;
+                padding: 40px 24px;
+                gap: 32px;
             }
 
             .hourglass-icon {
-                width: 60px;
-                height: 60px;
-            }
-
-            .main-heading {
-                font-size: 28px;
+                width: 80px;
+                height: 80px;
             }
 
             .status-banner {
-                flex-direction: column;
-                border-radius: 30px;
+                height: auto;
+                min-height: 40px;
+                padding: 3px;
+                border-radius: 50px;
             }
 
             .status-soon {
-                border-radius: 30px 30px 0 0;
-                padding: 15px 30px;
-                font-size: 18px;
+                font-size: 15px;
+                padding: 10px 18px;
+                border-radius: 50px;
+            }
+
+            .status-soon .emoji {
+                font-size: 16px;
             }
 
             .status-text {
-                padding: 15px 30px;
-                font-size: 16px;
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .main-heading {
+                font-size: clamp(28px, 5.5vw, 36px);
+                line-height: 1.3;
+            }
+
+            .background-overlay {
+                background-size: cover;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 14px 20px;
+            }
+
+            .logo img {
+                height: 28px;
+            }
+
+            .language-switcher {
+                font-size: 12px;
+                gap: 6px;
+            }
+
+            .language-switcher img {
+                width: 16px;
+                height: 16px;
+            }
+
+            .hero {
+                padding: 32px 20px;
+                gap: 28px;
+            }
+
+            .hourglass-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .status-banner {
+                height: auto;
+                min-height: 36px;
+                padding: 3px;
+                border-radius: 45px;
+                max-width: 90%;
+            }
+
+            .status-soon {
+                font-size: 14px;
+                padding: 8px 16px;
+                border-radius: 45px;
+            }
+
+            .status-soon .emoji {
+                font-size: 15px;
+            }
+
+            .status-text {
+                font-size: 13px;
+                padding: 7px 14px;
+            }
+
+            .main-heading {
+                font-size: clamp(24px, 6vw, 32px);
+                line-height: 1.35;
+                max-width: 95%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .header {
+                padding: 12px 16px;
+            }
+
+            .logo img {
+                height: 26px;
+            }
+
+            .language-switcher {
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 28px 16px;
+                gap: 24px;
+            }
+
+            .hourglass-icon {
+                width: 64px;
+                height: 64px;
+            }
+
+            .status-banner {
+                min-height: 34px;
+                padding: 2.5px;
+                max-width: 92%;
+            }
+
+            .status-soon {
+                font-size: 13px;
+                padding: 7px 14px;
+            }
+
+            .status-text {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .main-heading {
+                font-size: clamp(22px, 6.5vw, 28px);
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .status-banner {
+                max-width: 95%;
+            }
+
+            .status-soon {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .status-text {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+
+            .main-heading {
+                font-size: clamp(20px, 7vw, 26px);
             }
         }
     </style>
