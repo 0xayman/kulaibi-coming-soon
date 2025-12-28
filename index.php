@@ -5,8 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مجموعة الكليبي | قريباً</title>
     <meta name="description" content="مجموعة الكليبي - قريباً. إبداعنا يطبخ على مهل.. خلك قريب!">
-    <link href="https://db.onlinewebfonts.com/c/b0c178a6bf63dc134f142a232e2f7241?family=Arabic" rel="stylesheet" type="text/css"/>
     <style>
+        /* Huwiya Font Family - All Weights */
+        @font-face {
+            font-family: 'Huwiya Arabic';
+            src: url('assets/itfHuwiyaArabic-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Huwiya Arabic';
+            src: url('assets/itfHuwiyaArabic-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Huwiya Arabic';
+            src: url('assets/itfHuwiyaArabic-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Huwiya Arabic';
+            src: url('assets/itfHuwiyaArabic-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Huwiya Arabic';
+            src: url('assets/itfHuwiyaArabic-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +49,7 @@
         }
 
         body {
-            font-family: "Arabic";
+            font-family: 'Huwiya Arabic', sans-serif;
             min-height: 100vh;
             background-color: #1a1a1a;
             overflow-x: hidden;
